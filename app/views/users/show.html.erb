@@ -3,3 +3,7 @@ First name: <%= @user.first_name %><br>
 Last name: <%= @user.last_name %><br>
 Email: <%= @user.email %><br>
 Role: <%= @user.role %>
+<% if current_user_is_admin? %>
+  <div><%= link_to 'New User', new_user_path %></div>
+  <div><%= link_to 'All Users', users_path %></div>
+<% end %>
